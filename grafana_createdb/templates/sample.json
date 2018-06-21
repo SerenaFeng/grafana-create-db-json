@@ -1,0 +1,11 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "sample",
+    "title": "Sample",
+    "tags": [ "sample" ],
+    "timezone": "browser"
+  },
+  "folderId": 12,
+  "overwrite": true
+}

@@ -1,0 +1,39 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "text",
+    "title": "Text",
+    "tags": [ "text"],
+    "style": "dark",
+    "timezone": "browser",
+    "rows": [
+      {
+        "height": "200px",
+        "panels": [
+          {
+            "height": "100px",
+            "content": "span12",
+            "mode": "html",
+            "span": 12,
+            "title": "Text12",
+            "type": "text"
+          },
+          {
+            "content": "span6\n-----------\n This is a markdown test",
+            "mode": "markdown",
+            "span": 6,
+            "title": "Markdown6",
+            "type": "text"
+          },
+          {
+            "content": "span3",
+            "mode": "html",
+            "span": 3,
+            "title": "Text3",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+}

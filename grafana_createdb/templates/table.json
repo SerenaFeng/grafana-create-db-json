@@ -1,0 +1,159 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "table",
+    "title": "Table",
+    "tags": [ "table"],
+    "style": "dark",
+    "timezone": "browser",
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "300px",
+        "panels": [
+          {
+            "title": "TableColumns",
+            "type": "table",
+            "transform": "timeseries_to_columns",
+            "datasource": "fake",
+            "fontSize": "100%",
+            "scroll": true,
+            "showHeader": true,
+            "span": 6,
+            "styles": [
+              {
+                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                "pattern": "Time",
+                "type": "date"
+              },
+              {
+                "colorMode": "cell",
+                "colors": [
+                  "rgba(50, 172, 45, 0.97)",
+                  "rgba(237, 129, 40, 0.89)",
+                  "rgba(245, 54, 54, 0.9)"
+                ],
+                "pattern": "upper_50",
+                "mappingType": 1,
+                "rangeMaps": [
+                  {
+                    "from": "0",
+                    "text": "success",
+                    "to": "100"
+                  },
+                  {
+                    "from": "101",
+                    "text": "warning",
+                    "to": "1000"
+                  },
+                  {
+                    "from": "1001",
+                    "text": "fail",
+                    "to": "100000"
+                  }
+                ],
+                "sanitize": false,
+                "thresholds": [
+                  "101",
+                  "1000"
+                ],
+                "type": "string",
+                "unit": "short",
+                "valueMaps": [
+                  {
+                    "text": "aha",
+                    "value": "68"
+                  }
+                ]
+              },
+              {
+                "colorMode": "cell",
+                "colors": [
+                  "rgba(50, 172, 45, 0.97)",
+                  "rgba(237, 129, 40, 0.89)",
+                  "rgba(245, 54, 54, 0.9)"
+                ],
+                "pattern": "upper_25",
+                "mappingType": 2,
+                "rangeMaps": [
+                  {
+                    "from": "0",
+                    "text": "success",
+                    "to": "100"
+                  },
+                  {
+                    "from": "101",
+                    "text": "warning",
+                    "to": "1000"
+                  },
+                  {
+                    "from": "1001",
+                    "text": "fail",
+                    "to": "100000"
+                  }
+                ],
+                "sanitize": false,
+                "thresholds": [
+                  "101",
+                  "1000"
+                ],
+                "type": "string",
+                "unit": "short",
+                "valueMaps": [
+                  {
+                    "text": "aha",
+                    "value": "68"
+                  }
+                ]
+              }
+            ],
+            "targets": [
+              {
+                "refId": "A",
+                "target": "upper_50",
+                "type": "timeserie"
+              },
+              {
+                "refId": "B",
+                "target": "upper_25",
+                "type": "timeserie"
+              }
+            ]
+          },
+          {
+            "title": "TableRows",
+            "type": "table",
+            "transform": "timeseries_to_rows",
+            "datasource": "fake",
+            "fontSize": "100%",
+            "scroll": true,
+            "showHeader": true,
+            "span": 6,
+            "styles": [
+              {
+                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                "pattern": "Time",
+                "type": "date",
+                "unit": "short"
+              }
+            ],
+            "targets": [
+              {
+                "refId": "A",
+                "target": "upper_50",
+                "type": "timeserie"
+              },
+              {
+                "refId": "B",
+                "target": "upper_25",
+                "type": "timeserie"
+              }
+            ]
+          }
+        ],
+        "title": "New row"
+      }
+    ]
+  }
+}

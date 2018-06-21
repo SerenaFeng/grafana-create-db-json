@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "singlestat",
+    "title": "Singlestat",
+    "tags": [ "singlestat"],
+    "style": "dark",
+    "timezone": "browser",
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "300px",
+        "panels": [
+          {
+            "title": "Singlestat",
+            "type": "singlestat",
+            "datasource": "fake",
+            "span": 6,
+            "thresholds": "6,8",
+            "format": "short",
+            "valueName": "avg",
+            "gauge": {
+              "maxValue": 10,
+              "minValue": 0,
+              "show": true,
+              "thresholdLabels": false,
+              "thresholdMarkers": true
+            },
+            "mappingType": 1,
+            "sparkline": {
+              "fillColor": "rgba(31, 118, 189, 0.18)",
+              "full": true,
+              "lineColor": "rgb(200, 120, 193)",
+              "show": true
+            },
+            "targets": [
+              {
+                "refId": "A",
+                "target": "upper_25",
+                "type": "timeserie"
+              }
+            ]
+          }
+        ],
+        "title": "New row"
+      }
+    ]
+  }
+}

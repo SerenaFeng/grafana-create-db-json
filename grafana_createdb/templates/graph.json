@@ -1,0 +1,72 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "graph",
+    "title": "Graph",
+    "tags": [ "graph"],
+    "style": "dark",
+    "timezone": "browser",
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "300px",
+        "panels": [
+          {
+            "type": "graph",
+            "datasource": "fake",
+            "description": "Graph test",
+            "bars": true,
+            "lines": true,
+            "points": false,
+            "dashLength": 10,
+            "span": 12,
+            "targets": [
+              {
+                "refId": "A",
+                "target": "upper_50",
+                "type": "timeserie"
+              },{
+                "refId": "B",
+                "target": "upper_25",
+                "type": "timeserie"
+              }
+            ],
+            "legend": {
+              "alignAsTable": false,
+              "avg": true,
+              "current": true,
+              "hideEmpty": false,
+              "hideZero": false,
+              "max": true,
+              "min": true,
+              "rightSide": false,
+              "show": true,
+              "total": true,
+              "values": false
+            },
+            "thresholds": [
+              {
+                "colorMode": "critical",
+                "fill": false,
+                "line": true,
+                "op": "gt",
+                "value": 500,
+                "yaxis": "left"
+              },{
+                "colorMode": "warning",
+                "fill": false,
+                "line": true,
+                "op": "lt",
+                "value": 200,
+                "yaxis": "left"
+              }
+            ]
+
+          }
+        ],
+        "title": "New row"
+      }
+    ]
+  }
+}

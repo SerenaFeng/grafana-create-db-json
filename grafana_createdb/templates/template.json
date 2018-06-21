@@ -1,0 +1,103 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "template5",
+    "title": "Template5",
+    "tags": [ "template"],
+    "style": "dark",
+    "timezone": "browser",
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "300px",
+        "panels": [
+          {
+            "title": "$Project-$Case-$Version",
+            "type": "table",
+            "transform": "timeseries_to_rows",
+            "datasource": "testapi",
+            "fontSize": "100%",
+            "scroll": true,
+            "showHeader": true,
+            "span": 6,
+            "styles": [
+              {
+                "colorMode": null,
+                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                "pattern": "Time",
+                "type": "date"
+              },
+              {
+                "colorMode": "value",
+                "colors": [
+                  "rgba(50, 172, 45, 0.97)",
+                  "rgba(237, 129, 40, 0.89)",
+                  "rgba(245, 54, 54, 0.9)"
+                ],
+                "pattern": ".*",
+                "mappingType": 1,
+                "type": "string",
+                "unit": "short",
+                "valueMaps": [
+                  {
+                    "text": "0",
+                    "value": "FAIL"
+                  },{
+                    "text": "1",
+                    "value": "PASS"
+                  }
+                ]
+              }
+            ],
+            "targets": [
+              {
+                "refId": "A",
+                "rawQuery": true,
+                "target": "{\"project\": \"$Project\", \"case\": \"$Case\", \"version\": \"$Version\"}",
+                "type": "timeserie"
+              }
+            ]
+          }
+        ],
+        "title": "New row"
+      }
+    ],
+    "templating": {
+      "list": [
+        {
+          "datasource": "testapi",
+          "name": "Project",
+          "query": "projects",
+          "type": "query",
+          "refresh": 1
+        },{
+          "datasource": "testapi",
+          "name": "Case",
+          "query": "cases",
+          "type": "query",
+          "refresh": 1
+        },{
+          "name": "Version",
+          "type": "custom",
+          "query": "master, smoke",
+          "current": {
+            "text": "master",
+            "value": "master"
+          },
+          "options": [
+            {
+              "selected": true,
+              "text": "master",
+              "value": "master"
+            },{
+              "selected": false,
+              "text": "smoke",
+              "value": "smoke"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

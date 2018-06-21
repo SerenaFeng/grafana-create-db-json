@@ -1,0 +1,41 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "dblist",
+    "title": "DBList",
+    "tags": [ "dblist", "template"],
+    "style": "dark",
+    "timezone": "browser",
+    "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "300px",
+        "panels": [
+          {
+            "title": "ByProject",
+            "type": "dashlist",
+            "span": 6,
+            "headings": true,
+            "query": "T",
+            "recent": false,
+            "starred": false,
+            "search": true,
+            "tags": []
+          },{
+            "title": "ByVersion",
+            "type": "dashlist",
+            "span": 6,
+            "headings": false,
+            "query": "",
+            "recent": false,
+            "starred": false,
+            "search": true,
+            "tags": ["template"]
+          }
+        ],
+        "title": "New row"
+      }
+    ]
+  }
+}
